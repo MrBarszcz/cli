@@ -92,6 +92,23 @@ dark_catppuccin = [
     hex_to_hct("b4befe"),
 ]
 
+dark_imperio = [
+    hex_to_hct("BE0000"),
+    hex_to_hct("AA0000"),
+    hex_to_hct("BD0000"),
+    hex_to_hct("AF2323"),
+    hex_to_hct("DD2529"),
+    hex_to_hct("D9D9D9"),
+    hex_to_hct("000000"),
+    hex_to_hct("B91C1F"),
+    hex_to_hct("968989"),
+    hex_to_hct("1E1E1E"),
+    hex_to_hct("252321"),
+    hex_to_hct("61615F"),
+    hex_to_hct("888888"),
+    hex_to_hct("999999"), 
+]
+
 colour_names = [
     "rosewater",
     "flamingo",
