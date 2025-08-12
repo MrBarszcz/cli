@@ -43,18 +43,22 @@ class Command:
         hypr.dispatch("togglespecialworkspace", "communication")
 
     def music(self) -> None:
+        # Esta função agora procura por 'youtube-music' (ignorando maiúsculas/minúsculas)
+        # na classe ou no título da janela.
+        # Se não encontrar, executa o comando ["youtube-music"].
         self.spawn_or_move(
-            lambda c: c["class"] == "Spotify" or c["initialTitle"] == "Spotify" or c["initialTitle"] == "Spotify Free",
-            ["spicetify", "watch", "-s"],
+            lambda c: "youtube-music" in c["class"].lower() or "youtube music" in c["initialTitle"].lower(),
+            ["youtube-music"],
             "music",
         )
+        # Mantivemos a lógica para o 'feishin', caso você o use no futuro.
         self.move_client(lambda c: c["class"] == "feishin", "music")
         hypr.dispatch("togglespecialworkspace", "music")
 
     def sysmon(self) -> None:
         self.spawn_client(
             lambda c: c["class"] == "btop" and c["title"] == "btop" and c["workspace"]["name"] == "special:sysmon",
-            ["foot", "-a", "btop", "-T", "btop", "fish", "-C", "exec btop"],
+            ["kitty", "btop"],
         )
         hypr.dispatch("togglespecialworkspace", "sysmon")
 
